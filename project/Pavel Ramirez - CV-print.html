@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pavel Ramírez Barrera — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:        #2b2f3a;
+    --ink-soft:   #4c515d;
+    --ink-faint:  #767b86;
+    --navy:       #2f3d63;
+    --navy-deep:  #25304f;
+    --blue:       #3f5a9c;
+    --gold:       #b08433;
+    --gold-deep:  #8f6a25;
+    --line:       #d8dae0;
+    --line-soft:  #e8e9ee;
+    --paper:      #ffffff;
+    --paper-2:    #f6f5f1;
+    --serif: "Spectral", Georgia, serif;
+    --sans: "Libre Franklin", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:#e7e7e4; font-family:var(--sans); color:var(--ink); line-height:1.5; -webkit-font-smoothing:antialiased; }
+
+  .sheet{
+    width:210mm; min-height:297mm; margin:18px auto; padding:16mm 17mm 14mm;
+    background:var(--paper); box-shadow:0 6px 30px rgba(0,0,0,.16);
+  }
+
+  /* ---------- header ---------- */
+  .head{ display:flex; justify-content:space-between; align-items:center; gap:24px; padding-bottom:14px; border-bottom:2px solid var(--navy-deep); }
+  .head .name{ font-family:var(--serif); font-weight:600; font-size:30pt; line-height:1; letter-spacing:-0.01em; color:var(--navy-deep); }
+  .head .name .last{ font-style:italic; font-weight:400; color:var(--ink); }
+  .head .role{ font-size:10.5pt; color:var(--blue); font-weight:600; margin-top:7px; letter-spacing:.01em; }
+  .head .contact{ text-align:right; font-family:var(--mono); font-size:7.6pt; line-height:1.9; color:var(--ink-soft); letter-spacing:.02em; white-space:nowrap; }
+  .head .contact .lbl{ color:var(--gold-deep); }
+
+  .langline{ display:flex; gap:8px; margin-top:9px; flex-wrap:wrap; }
+  .langline .lp{ font-family:var(--mono); font-size:7.4pt; letter-spacing:.06em; text-transform:uppercase; color:var(--navy-deep); border:1px solid var(--line); border-radius:20px; padding:3px 9px; }
+  .langline .lp b{ color:var(--gold-deep); font-weight:600; }
+
+  /* ---------- layout ---------- */
+  .body{ display:grid; grid-template-columns:1fr; gap:2px; margin-top:16px; }
+
+  .sec{ margin-top:15px; break-inside:avoid; }
+  .sec-title{
+    font-family:var(--mono); font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep);
+    display:flex; align-items:center; gap:10px; margin-bottom:11px;
+  }
+  .sec-title::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .sec-title .fr{ color:var(--ink-faint); }
+
+  .summary{ font-family:var(--serif); font-size:11.5pt; line-height:1.5; color:var(--navy-deep); }
+  .summary b{ color:var(--gold-deep); font-weight:600; font-style:normal; }
+
+  /* ---------- experience ---------- */
+  .job{ break-inside:avoid; padding:9px 0; border-top:1px solid var(--line-soft); }
+  .job:first-of-type{ border-top:none; padding-top:2px; }
+  .sec-title + .job{ border-top:none; padding-top:2px; }
+  .job-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; }
+  .job-title{ font-family:var(--serif); font-size:12.5pt; font-weight:600; color:var(--navy-deep); }
+  .job-org{ font-size:9.5pt; font-weight:600; color:var(--blue); margin-top:1px; }
+  .job-date{ font-family:var(--mono); font-size:8pt; color:var(--ink-faint); white-space:nowrap; letter-spacing:.02em; }
+  .job-date.cur{ color:var(--gold-deep); }
+  .job-intro{ font-size:9.4pt; color:var(--ink-soft); margin-top:6px; }
+  .job-intro b{ color:var(--ink); }
+  ul.bul{ list-style:none; margin-top:6px; display:flex; flex-direction:column; gap:3px; }
+  ul.bul li{ position:relative; padding-left:15px; font-size:9.4pt; line-height:1.45; color:var(--ink-soft); }
+  ul.bul li::before{ content:"—"; position:absolute; left:0; color:var(--gold); }
+  ul.bul li b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- bottom three-up ---------- */
+  .triple{ display:grid; grid-template-columns:1.15fr 1fr; gap:26px; margin-top:16px; break-inside:avoid; }
+  .skills{ display:flex; flex-direction:column; gap:5px; }
+  .skill{ display:flex; align-items:center; gap:9px; }
+  .skill .dot{ width:5px; height:5px; border-radius:50%; background:var(--navy); flex:none; }
+  .skill .nm{ font-size:9.4pt; color:var(--ink); }
+  .langs{ display:flex; flex-direction:column; gap:7px; }
+  .lang{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .lang .nm{ font-family:var(--serif); font-size:10.5pt; font-weight:600; color:var(--navy-deep); }
+  .lang .lvl{ font-family:var(--mono); font-size:7.6pt; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); }
+  .lang .lvl b{ color:var(--gold-deep); font-weight:600; }
+
+  .edu{ margin-top:4px; }
+  .edu .deg{ font-family:var(--serif); font-size:11pt; font-weight:600; color:var(--navy-deep); }
+  .edu .inst{ font-size:9.2pt; color:var(--ink-soft); margin-top:1px; }
+  .edu .yr{ font-family:var(--mono); font-size:7.8pt; color:var(--ink-faint); margin-top:2px; }
+
+  .foot{ margin-top:18px; padding-top:9px; border-top:1px solid var(--line-soft); font-family:var(--mono); font-size:7pt; letter-spacing:.06em; color:var(--ink-faint); display:flex; justify-content:space-between; }
+
+  /* ---------- print ---------- */
+  @page{ size:A4; margin:13mm 0; }
+  @media print{
+    body{ background:#fff; }
+    .sheet{ width:auto; min-height:0; margin:0; padding:0 16mm; box-shadow:none; }
+    *, *::before, *::after{
+      animation-delay:-99s !important; animation-duration:.001s !important;
+      animation-iteration-count:1 !important; animation-fill-mode:both !important;
+      transition-duration:0s !important;
+      -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="head">
+    <div>
+      <div class="name">Pavel <span class="last">Ramírez Barrera</span></div>
+      <div class="role">Procurement &amp; International Operations · International Relations, ITAM</div>
+    </div>
+    <div class="contact">
+      <div>Puerto Morelos, México</div>
+      <div>+52 55 5431 5911</div>
+      <div>pavelramirezb@gmail.com</div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <section class="sec">
+      <div class="sec-title">Profile</div>
+      <p class="summary">Bilingual procurement &amp; operations specialist with over a decade leading <b>supply chains, multi-country payroll and budget management</b> across the Americas and beyond — bringing the discipline of international operations and a multilateral mindset to complex, well-documented, cost-effective delivery.</p>
+    </section>
+
+    <section class="sec">
+      <div class="sec-title">Experience</div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Procurement Coordinator</div><div class="job-org">AB Living</div></div>
+          <div class="job-date cur">Jan 2025 — Present</div>
+        </div>
+        <ul class="bul">
+          <li>Leading procurement and logistics for the full <b>FF&amp;E and OS&amp;E</b> package supporting a hotel's pre-opening phase.</li>
+          <li>Managing supplier negotiations to secure cost-effective agreements while ensuring compliance with <b>Marriott brand standards</b>.</li>
+          <li>Coordinating international and local shipments, overseeing <b>customs clearance</b>, and aligning deliveries with project milestones.</li>
+          <li>Preparing and presenting cost comparisons, purchase orders, and budget-tracking reports for management approval.</li>
+          <li>Collaborating with design, operations and project-management teams to guarantee timely delivery and seamless installation.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Payroll Manager</div><div class="job-org">Get Staffed Up</div></div>
+          <div class="job-date">Sep 2023 — Nov 2024</div>
+        </div>
+        <ul class="bul">
+          <li>Managed payroll ensuring accurate, timely payment of salaries and benefits for <b>1,000+ employees across eight countries</b> — slightly over <b>$1.2M per month</b>.</li>
+          <li>Coordinated with local entities to process payroll in <b>Colombia, El Salvador, Honduras, Mexico and South Africa</b>.</li>
+          <li>Generated payroll reports, analysing and monitoring trends.</li>
+          <li>Calculated weekly payroll cash flow.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Payroll Specialist</div><div class="job-org">Get Staffed Up</div></div>
+          <div class="job-date">Dec 2022 — Sep 2023</div>
+        </div>
+        <ul class="bul">
+          <li>Prepared biweekly payroll reports to process payments for more than <b>1,000 employees</b>.</li>
+          <li>Applied supplemental payroll payments upon requests from other departments.</li>
+          <li>Calculated and managed salary increases for employees and contractors.</li>
+          <li>Generated pay stubs upon departmental requests.</li>
+          <li>Assisted team members with payroll-related issues and adjustments.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Finance Assistant</div><div class="job-org">Get Staffed Up · Remote</div></div>
+          <div class="job-date">Sep 2022 — Dec 2022</div>
+        </div>
+        <ul class="bul">
+          <li>Kept the company's <b>bank reconciliations</b> fully up to date.</li>
+          <li>Processed <b>ACH payments</b>.</li>
+          <li>Recorded all payments within my scope in the accounting ledgers.</li>
+          <li>Prepared and updated monthly billing reports.</li>
+          <li>Supported other members of the finance team with a range of tasks.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">FF&amp;E / OS&amp;E Procurement Coordinator</div><div class="job-org">RLH Properties — Mayakoba</div></div>
+          <div class="job-date">Jul 2018 — Mar 2022</div>
+        </div>
+        <ul class="bul">
+          <li>Managed annual purchases of <b>$5M</b> in furniture and operating equipment for <b>Rosewood, Banyan Tree and Fairmont</b> projects.</li>
+          <li>Created the department's <b>first FF&amp;E / OS&amp;E supplier database</b>; issued <b>900+ purchase orders</b> under optimal market conditions.</li>
+          <li>Sourced and evaluated new suppliers to optimise costs within established budgets.</li>
+          <li>Prepared price, specification and delivery-time comparisons to determine best proposals.</li>
+          <li>Provided budget reports, comparative analyses and updated procurement records to management.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Purchasing Coordinator</div><div class="job-org">Optimus GLI</div></div>
+          <div class="job-date">Jan 2016 — Jul 2018</div>
+        </div>
+        <ul class="bul">
+          <li>Requested quotations from suppliers to evaluate products, services, and pricing.</li>
+          <li>Conducted price analyses, financial reports, and other data to generate purchase orders according to project requirements.</li>
+          <li>Assessed markets and delivery systems to ensure timeliness and quality.</li>
+          <li>Coordinated projects, aligning delivery schedules with project needs.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><div class="job-title">Procurement Officer</div><div class="job-org">Kince Arquitektura — Hyatt Ziva Cancún</div></div>
+          <div class="job-date">Mar 2015 — Dec 2015</div>
+        </div>
+        <p class="job-intro">Joined the <b>Hyatt Ziva Cancún</b> hotel opening project, performing the following tasks:</p>
+        <ul class="bul">
+          <li>Quoted and negotiated prices, quality, delivery times, and payment terms with at least three supplier options, preparing comparative cost-quality tables.</li>
+          <li>Coordinated freight logistics, shipping, and delivery of operational material (FF&amp;E and OS&amp;E) for Hyatt Ziva.</li>
+          <li>Executed delivery-receipt lists for administrative closure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="triple">
+      <section class="sec" style="margin-top:0">
+        <div class="sec-title">Skills</div>
+        <div class="skills">
+          <div class="skill"><span class="dot"></span><span class="nm">Procurement &amp; supplier negotiation</span></div>
+          <div class="skill"><span class="dot"></span><span class="nm">Multi-country payroll &amp; budget administration</span></div>
+          <div class="skill"><span class="dot"></span><span class="nm">International logistics &amp; delivery coordination</span></div>
+          <div class="skill"><span class="dot"></span><span class="nm">Data management &amp; cost analysis</span></div>
+          <div class="skill"><span class="dot"></span><span class="nm">Workflow automation (n8n &amp; similar)</span></div>
+        </div>
+      </section>
+
+      <section class="sec" style="margin-top:0">
+        <div class="sec-title">Languages</div>
+        <div class="langs">
+          <div class="lang"><span class="nm">Spanish</span><span class="lvl">Native · <b>C2</b></span></div>
+          <div class="lang"><span class="nm">English</span><span class="lvl">TOEFL iBT · <b>100</b></span></div>
+          <div class="lang"><span class="nm">French</span><span class="lvl">Intermediate · <b>B1</b></span></div>
+        </div>
+
+        <div class="sec-title" style="margin-top:15px">Education</div>
+        <div class="edu">
+          <div class="deg">B.A. in International Relations</div>
+          <div class="inst">Instituto Tecnológico Autónomo de México (ITAM)</div>
+          <div class="yr">2005 — 2010</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="foot">
+      <span>Pavel Ramírez Barrera — Curriculum Vitae</span>
+      <span>Español / English</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Auto-open the print dialog once fonts + layout are ready.
+  function go(){ setTimeout(()=>window.print(), 500); }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(go);
+  } else {
+    addEventListener('load', go);
+  }
+</script>
+</body>
+</html>
