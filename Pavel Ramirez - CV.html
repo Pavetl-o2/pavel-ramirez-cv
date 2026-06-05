@@ -247,13 +247,11 @@
     background:var(--paper-2); border:1px solid var(--line); border-radius:14px; padding:34px 36px; margin-top:14px;
   }
   .intern-seal{
-    width:64px; height:64px; flex:none; border-radius:50%;
-    border:1.5px solid var(--gold); display:flex; align-items:center; justify-content:center;
-    font-family:var(--serif); font-weight:600; font-size:14px; color:var(--gold-deep);
-    position:relative; background:color-mix(in oklab, var(--gold) 9%, transparent);
-    text-align:center; line-height:1.2;
+    width:72px; height:72px; flex:none; border-radius:50%;
+    border:none; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; flex-shrink:0;
   }
-  .intern-seal::before{ content:""; position:absolute; inset:5px; border-radius:50%; border:1px dashed color-mix(in oklab, var(--gold) 45%, transparent); }
+  .intern-seal::before{ display:none; }
   .intern-title{ font-family:var(--serif); font-size:22px; font-weight:600; color:var(--navy-deep); }
   .intern-org{ font-size:15px; color:var(--blue); font-weight:600; margin-top:3px; margin-bottom:2px; }
   .intern-date{ font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--ink-faint); white-space:nowrap; padding-top:4px; }
@@ -264,12 +262,12 @@
     background:var(--paper-2); border:1px solid var(--line); border-radius:14px; padding:34px 36px; margin-top:14px;
   }
   .edu-seal{
-    width:64px; height:64px; flex:none; border-radius:50%;
-    border:1.5px solid var(--navy); display:flex; align-items:center; justify-content:center;
-    font-family:var(--serif); font-weight:600; font-size:22px; color:var(--navy-deep);
-    position:relative;
+    width:88px; height:44px; flex:none; border-radius:8px;
+    border:none; display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
   }
-  .edu-seal::before{ content:""; position:absolute; inset:5px; border-radius:50%; border:1px dashed var(--line); }
+  .edu-seal::before{ display:none; }
+  .edu-seal svg,.intern-seal svg{ width:100%; height:100%; display:block; }
   .edu-deg{ font-family:var(--serif); font-size:22px; font-weight:600; color:var(--navy-deep); }
   .edu-inst{ font-size:15px; color:var(--ink-soft); margin-top:3px; }
   .edu-date{ font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--ink-faint); white-space:nowrap; }
@@ -606,7 +604,26 @@
     <div class="eyebrow reveal">Education</div>
     <h2 class="section-title reveal d1">Academic background.</h2>
     <div class="edu-card reveal d2">
-      <div class="edu-seal">ITAM</div>
+      <div class="edu-seal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 175" role="img" aria-label="ITAM">
+          <rect width="350" height="175" rx="14" fill="#00695C"/>
+          <!-- i -->
+          <rect x="18" y="22" width="44" height="131" rx="9" fill="white"/>
+          <!-- t -->
+          <rect x="80" y="22" width="44" height="131" rx="9" fill="white"/>
+          <rect x="68" y="22" width="68" height="38" rx="9" fill="white"/>
+          <!-- a -->
+          <rect x="156" y="22" width="92" height="131" rx="9" fill="white"/>
+          <rect x="192" y="57" width="56" height="66" rx="8" fill="#00695C"/>
+          <rect x="192" y="57" width="56" height="17" fill="#00695C"/>
+          <!-- m -->
+          <rect x="270" y="22" width="40" height="131" rx="9" fill="white"/>
+          <rect x="270" y="22" width="62" height="68" rx="34" fill="white"/>
+          <rect x="298" y="58" width="34" height="95" rx="9" fill="#00695C"/>
+          <rect x="310" y="22" width="22" height="131" rx="9" fill="white"/>
+          <rect x="310" y="22" width="22" height="68" rx="11" fill="white"/>
+        </svg>
+      </div>
       <div>
         <div class="edu-deg">B.A. in International Relations</div>
         <div class="edu-inst">Instituto Tecnológico Autónomo de México (ITAM)</div>
@@ -623,7 +640,65 @@
     <div class="eyebrow reveal">Multilateral Experience</div>
     <h2 class="section-title reveal d1">International institutional internship.</h2>
     <div class="intern-card reveal d2">
-      <div class="intern-seal">OAS<br>OEA</div>
+      <div class="intern-seal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Organisation of American States seal">
+          <defs>
+            <clipPath id="circClip"><circle cx="100" cy="100" r="98"/></clipPath>
+            <path id="topArc"    d="M 23,100 A 77,77 0 0,1 177,100"/>
+            <path id="bottomArc" d="M 177,100 A 77,77 0 0,1 23,100"/>
+          </defs>
+          <!-- Gold outer ring -->
+          <circle cx="100" cy="100" r="99" fill="#F2C200"/>
+          <!-- White field -->
+          <circle cx="100" cy="100" r="88" fill="white"/>
+          <!-- Thin border -->
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#222" stroke-width="1.2"/>
+          <!-- Top circular text -->
+          <text font-size="8.4" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="1.9" fill="#111">
+            <textPath href="#topArc" startOffset="4%">ORGANIZACIÓN DE LOS ESTADOS</textPath>
+          </text>
+          <!-- Bottom circular text -->
+          <text font-size="8.4" font-family="Arial,Helvetica,sans-serif" font-weight="700" letter-spacing="3.2" fill="#111">
+            <textPath href="#bottomArc" startOffset="20%">AMERICANOS</textPath>
+          </text>
+          <!-- Decorative asterisk bottom -->
+          <text x="100" y="182" font-size="8" text-anchor="middle" fill="#444">✾</text>
+          <!-- Centre emblem: blue hemisphere base -->
+          <ellipse cx="100" cy="96" rx="50" ry="46" fill="#1a4a9c"/>
+          <!-- Radiating flag rays — 18 coloured wedges -->
+          <g clip-path="url(#circClip)">
+            <line x1="100" y1="96" x2="100" y2="46" stroke="#C8102E" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="120" y2="47" stroke="#003893" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="138" y2="52" stroke="#009A44" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="152" y2="62" stroke="#F4C400" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="149" y2="78" stroke="#0032A0" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="149" y2="95" stroke="#CE1126" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="148" y2="113" stroke="#009B77" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="140" y2="128" stroke="#F4A100" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="126" y2="140" stroke="#003087" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="100" y2="144" stroke="#CE1126" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="74"  y2="140" stroke="#009A44" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="60"  y2="128" stroke="#003893" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="52"  y2="113" stroke="#F4C400" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="51"  y2="95"  stroke="#0038A8" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="51"  y2="78"  stroke="#C8102E" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="62"  y2="62"  stroke="#006B3F" stroke-width="5.5"/>
+            <line x1="100" y1="96" x2="80"  y2="47"  stroke="#F5A623" stroke-width="5.5"/>
+          </g>
+          <!-- Gold spear tips -->
+          <g fill="#D4A000">
+            <circle cx="100" cy="48" r="3.5"/><circle cx="120" cy="49" r="3.5"/><circle cx="138" cy="54" r="3.5"/>
+            <circle cx="152" cy="64" r="3.5"/><circle cx="149" cy="80" r="3.5"/><circle cx="149" cy="97" r="3.5"/>
+            <circle cx="148" cy="115" r="3.5"/><circle cx="140" cy="130" r="3.5"/><circle cx="126" cy="142" r="3.5"/>
+            <circle cx="100" cy="146" r="3.5"/><circle cx="74"  cy="142" r="3.5"/><circle cx="60"  cy="130" r="3.5"/>
+            <circle cx="52"  cy="115" r="3.5"/><circle cx="51"  cy="97"  r="3.5"/><circle cx="51"  cy="80"  r="3.5"/>
+            <circle cx="62"  cy="64"  r="3.5"/><circle cx="80"  cy="49"  r="3.5"/>
+          </g>
+          <!-- Central bright highlight -->
+          <circle cx="100" cy="96" r="9" fill="#F2C200" opacity="0.9"/>
+          <circle cx="100" cy="96" r="5" fill="#1a4a9c"/>
+        </svg>
+      </div>
       <div>
         <div class="intern-title">Research Intern</div>
         <div class="intern-org">SEDI — Organisation of American States (OAS) · Washington, D.C.</div>
